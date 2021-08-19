@@ -3,7 +3,7 @@
 //  Author:       dingfang
 //  CreateDate:   2021-03-04 19:23:04
 //  ModifyAuthor: dingfang
-//  ModifyDate:   2021-03-07 14:51:31
+//  ModifyDate:   2021-03-08 09:43:16
 // =======================================================================
 
 #include "vim.h"
@@ -471,6 +471,11 @@ int main(void)
         printf("signal failed!\n");
         exit(-1);
     }
+
+    /* 直接读取终端输入 */
+    system("stty -icanon");
+    /* 关闭回显 */
+    system("stty -echo");
 
     Vim v;
     v.beginShow();
